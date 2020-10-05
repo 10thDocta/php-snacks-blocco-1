@@ -53,10 +53,9 @@ $matches = [
 
 <body>
     <ul>
-        <?php foreach ($matches as $match) { ?>
-        <li><?php echo $match['squadra_casa']; ?> - <?php echo $match['squadra_ospite']; ?> |
-            <?php echo $match['squadra_casa_punti']; ?> - <?php echo $match['squadra_ospite_punti']; ?></li>
-        <?php } ?>
+        <?php foreach ($matches as $match) { 
+       echo "<li>" . $match['squadra_casa']. " - " . $match['squadra_ospite']. " | " .$match['squadra_casa_punti'] . " - " .$match['squadra_ospite_punti'] . "</li>";
+         } ?>
     </ul>
 </body>
 
