@@ -1,8 +1,8 @@
 <?php 
 
-$name = isset($_GET['name']) ? ($_GET['name']) : 'da inserire';
-$email = isset($_GET['email']) ? ($_GET['email']) : 'da inserire';
-$age = isset($_GET['age']) ? ($_GET['age']) : 'da inserire';
+$name = isset($_GET['name']) ? ($_GET['name']) : 'empty';
+$email = isset($_GET['email']) ? ($_GET['email']) : 'empty';
+$age = isset($_GET['age']) ? ($_GET['age']) : 'empty';
 
 // var_dump(strlen($name));
 
@@ -22,8 +22,10 @@ $age = isset($_GET['age']) ? ($_GET['age']) : 'da inserire';
 <body>
 
     <p>
-        <?php if (strlen($name) > 3 && strpos($email, "@") && strpos($email, ".") && is_numeric($age) ) {
+        <?php if ((strlen($name) > 3 && $name != "empty") && (strpos($email, "@") && strpos($email, ".")) && (is_numeric($age) && intval($age) > 0) ) {
             echo "Accesso consentito";
+        } elseif ($name == "empty" || $email == "empty" || $age == "empty" ) {
+            echo "Mancano i parametri di ingresso";
         } else {
             echo "ACCESSO NEGATO!!!";
         }
