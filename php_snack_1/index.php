@@ -41,7 +41,6 @@ $matches = [
 ];
 
 // var_dump($matches["gara_1"]["squadra_casa"]);
-
 ?>
 
 <!DOCTYPE html>
@@ -55,9 +54,11 @@ $matches = [
 
 <body>
     <ul>
-        <?php foreach ($matches as $match) { 
-       echo "<li>" . $match['squadra_casa'] . " - " . $match['squadra_ospite'] . " | " . $match['squadra_casa_punti'] . " - " . $match['squadra_ospite_punti'] . "</li>";
-         } ?>
+        <?php foreach ($matches as $match) { ?>
+        <li>
+            <?php echo $match['squadra_casa'] . " - " . $match['squadra_ospite'] . " | " . $match['squadra_casa_punti'] . " - " . $match['squadra_ospite_punti']; ?>
+        </li>
+        <?php } ?>
     </ul>
 </body>
 
